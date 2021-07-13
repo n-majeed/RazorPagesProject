@@ -1,0 +1,50 @@
+﻿@page
+@model RazorPagesProject.Pages.Employees.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>EmployeeModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="EmployeeModel.Id" />
+            <div class="form-group">
+                <label asp-for="EmployeeModel.Name" class="control-label"></label>
+                <input asp-for="EmployeeModel.Name" class="form-control" />
+                <span asp-validation-for="EmployeeModel.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeModel.Designation" class="control-label"></label>
+                <input asp-for="EmployeeModel.Designation" class="form-control" />
+                <span asp-validation-for="EmployeeModel.Designation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeModel.JoinigDate" class="control-label"></label>
+                <input asp-for="EmployeeModel.JoinigDate" class="form-control" />
+                <span asp-validation-for="EmployeeModel.JoinigDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeModel.Salary" class="control-label"></label>
+                <input asp-for="EmployeeModel.Salary" class="form-control" />
+                <span asp-validation-for="EmployeeModel.Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
